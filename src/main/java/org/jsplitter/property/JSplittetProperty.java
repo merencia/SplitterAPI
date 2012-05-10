@@ -12,8 +12,8 @@ import java.util.logging.Logger;
 public class JSplittetProperty {
 
     private static final JSplittetProperty INSTANCE = new JSplittetProperty();
-    private Properties proprertis = new Properties();
-    private static final String URL_PROPERTIES = "/org/jsplitter/resources/propriedades.properties";
+    private Properties proprerties = new Properties();
+    private static final String URL_PROPERTIES = "/resources/propriedades.properties";
             
     private JSplittetProperty() {
         loadPropertis();
@@ -25,13 +25,13 @@ public class JSplittetProperty {
     
     private void loadPropertis(){
         try {
-            proprertis.load(JSplittetProperty.class.getResourceAsStream(URL_PROPERTIES));
+            proprerties.load(JSplittetProperty.class.getResourceAsStream(URL_PROPERTIES));
         } catch (IOException ex) {
             Logger.getLogger(JSplittetProperty.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
     public String getProperty(String key){
-        return proprertis.getProperty(key);
+        return proprerties.getProperty(key);
     }
 }
